@@ -1,0 +1,94 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f0f2f5;
+    color: #333;
+    padding: 40px 20px;
+}
+
+.compare-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.compare-header {
+    background: #002d5b; /* Azul profundo corporativo */
+    color: white;
+    padding: 50px;
+    text-align: center;
+}
+
+.compare-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.vs {
+    color: #ff4f1f;
+    font-style: italic;
+    font-weight: 300;
+}
+
+/* Estilos de la Tabla */
+.table-wrapper {
+    padding: 30px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+}
+
+th, td {
+    padding: 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.brand-genesys {
+    color: #ff4f1f;
+    border-bottom: 4px solid #ff4f1f;
+}
+
+.brand-salesforce {
+    color: #1798c1; /* Azul Salesforce */
+    border-bottom: 4px solid #1798c1;
+}
+
+/* Indicadores visuales */
+.check { color: #2e7d32; font-weight: 500; }
+.cross { color: #c62828; font-weight: 500; }
+
+tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.footer-note {
+    background: #f8f9fa;
+    padding: 30px;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.footer-note p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    th, td { padding: 12px; font-size: 0.9rem; }
+}

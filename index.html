@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CX Cloud | Genesys + Salesforce</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --genesys-orange: #ff5b2e;
+      --genesys-dark: #101935;
+      --salesforce-blue: #29a8e0;
+      --soft-bg: #f4f3ef;
+      --panel: #ffffff;
+      --muted: #64748b;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--soft-bg);
+      color: #0f172a;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .hero-glow {
+      background:
+        radial-gradient(circle at top right, rgba(41, 168, 224, 0.16), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(255, 91, 46, 0.18), transparent 28%);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+    }
+
+    .section-label {
+      letter-spacing: 0.32em;
+    }
+
+    .topic-btn.active {
+      background: linear-gradient(135deg, var(--genesys-orange), var(--salesforce-blue));
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 16px 40px rgba(16, 25, 53, 0.14);
+      transform: translateY(-2px);
+    }
+
+    .topic-panel {
+      display: none;
+      animation: fadeIn 0.35s ease;
+    }
+
+    .topic-panel.active {
+      display: block;
+    }
+
+    .metric-card:hover,
+    .pillar-card:hover,
+    .hover-rise:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 1rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(255,91,46,0.45), rgba(41,168,224,0.45));
+    }
+
+    .roadmap-item::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 9999px;
+      background: var(--genesys-orange);
+      display: inline-block;
+      margin-right: 0.75rem;
+      flex-shrink: 0;
+      margin-top: 0.45rem;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <div>
+        <div class="text-xs font-semibold uppercase section-label text-orange-500">CX Cloud</div>
+        <div class="text-lg font-bold">Genesys + Salesforce</div>
+      </div>
+      <nav class="hidden gap-6 text-sm md:flex">
+        <a href="#reto" class="hover:text-orange-500">Reto</a>
+        <a href="#solucion" class="hover:text-orange-500">Solución</a>
+        <a href="#pilares" class="hover:text-orange-500">Pilares</a>
+        <a href="#arquitectura" class="hover:text-orange-500">Arquitectura</a>
+        <a href="#impacto" class="hover:text-orange-500">Impacto</a>
+        <a href="#roadmap" class="hover:text-orange-500">Roadmap</a>
+        <a href="C:\Users\cserrato\OneDrive - Genesys Telecommunications Laboratories, Inc\Desktop\Escritorio\Project Genesys\Competidores\diferencias\Agentforce.html" class="hover:text-orange-500">Evaluar</a>
+        <a href="C:\Users\cserrato\OneDrive - Genesys Telecommunications Laboratories, Inc\Desktop\Escritorio\Project Genesys\Competidores\Agentforce\genesys_agentforce.html" class="hover:text-orange-500">Diferencias</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative overflow-hidden hero-glow">
+      <div class="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-[1.2fr_0.8fr] md:py-28">
+        <div>
+          <div class="mb-4 inline-flex rounded-full border border-orange-200 bg-orange-50 px-4 py-1 text-xs font-semibold uppercase section-label text-orange-600">
+            Genesys + Salesforce
+          </div>
+          <h1 class="max-w-4xl text-5xl font-black leading-tight tracking-tight md:text-7xl">
+            Orqueste cada experiencia con <span class="text-orange-500">Genesys</span>, Visualice cada momento en <span class="text-sky-500">Salesforce</span>.
+          </h1>
+          <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-700 md:text-xl">
+            CX Cloud unifica CCaaS, CRM, IA, WEM y journeys en una sola experiencia nativa, diseñada para acelerar eficiencia, lealtad y crecimiento.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#solucion" class="rounded-2xl bg-orange-500 px-6 py-3 font-semibold text-white shadow-lg shadow-orange-200 transition hover:-translate-y-0.5">
+              Ver propuesta
+            </a>
+            <a href="#roadmap" class="rounded-2xl border border-slate-300 bg-white px-6 py-3 font-semibold transition hover:border-slate-400">
+              Explorar roadmap
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-2xl shadow-slate-200/60">
+            <div class="text-sm font-semibold uppercase section-label text-orange-500">Mensaje clave</div>
+            <p class="mt-4 text-3xl font-bold leading-tight text-slate-900">
+              La asistencia moderna exige coordinación perfecta entre velocidad, control y experiencia.
+            </p>
+            <div class="mt-6 grid gap-3">
+              <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
+                <div class="rounded-full border border-slate-300 px-4 py-3 text-center font-medium">Empatía</div>
+                <div class="h-10 w-10 rounded-full bg-orange-500 text-center text-sm font-bold leading-10 text-white">+</div>
+                <div class="rounded-full border border-slate-300 px-4 py-3 text-center font-medium">Velocidad</div>
+              </div>
+              <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
+                <div class="rounded-full border border-slate-300 px-4 py-3 text-center font-medium">Personalizar</div>
+                <div class="h-10 w-10 rounded-full bg-orange-500 text-center text-sm font-bold leading-10 text-white">+</div>
+                <div class="rounded-full border border-slate-300 px-4 py-3 text-center font-medium">Automatizar</div>
+              </div>
+              <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
+                <div class="rounded-full border border-slate-300 px-4 py-3 text-center font-medium">Acompañamiento especializado</div>
+                <div class="h-10 w-10 rounded-full bg-orange-500 text-center text-sm font-bold leading-10 text-white">+</div>
+                <div class="rounded-full border border-slate-300 px-4 py-3 text-center font-medium">Cumplir SLAs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reto" class="mx-auto max-w-7xl px-6 py-20">
+      <div class="mb-10">
+        <div class="text-sm font-semibold uppercase section-label text-orange-500">El reto</div>
+        <h2 class="mt-3 text-4xl font-black md:text-5xl">La integración tradicional de CCaaS y CRM ya no es suficiente</h2>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="hover-rise rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition">
+          <div class="text-lg font-bold text-slate-900">Problemas del enfoque legado</div>
+          <div class="mt-6 grid gap-4">
+            <div class="flex gap-3 rounded-2xl bg-slate-50 p-4"><div class="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500"></div><p class="text-slate-700">Dependencia de recursos costosos de TI para implementar y mantener.</p></div>
+            <div class="flex gap-3 rounded-2xl bg-slate-50 p-4"><div class="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500"></div><p class="text-slate-700">Falta de datos consolidados y contexto del cliente a través de canales.</p></div>
+            <div class="flex gap-3 rounded-2xl bg-slate-50 p-4"><div class="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500"></div><p class="text-slate-700">Departamentos aislados con múltiples soluciones desconectadas.</p></div>
+            <div class="flex gap-3 rounded-2xl bg-slate-50 p-4"><div class="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500"></div><p class="text-slate-700">Base frágil para agentic AI y para el cambio hacia trabajo digital.</p></div>
+          </div>
+        </div>
+        <div class="hover-rise rounded-[2rem] border border-slate-200 bg-gradient-to-br from-[#101935] to-[#1d4f91] p-8 text-white shadow-sm transition">
+          <div class="text-lg font-bold">Oportunidad estratégica</div>
+          <p class="mt-6 text-3xl font-extrabold leading-tight">
+            Transformar el CRM en un centro de contacto todo en uno para una economía de experiencias.
+          </p>
+          <div class="mt-8 grid grid-cols-2 gap-4">
+            <div class="rounded-2xl bg-white/10 p-5">
+              <div class="text-4xl font-black text-orange-300">87%</div>
+              <p class="mt-2 text-sm text-slate-100">de consumidores dicen que una sola mala experiencia puede alejarlos de una marca.</p>
+            </div>
+            <div class="rounded-2xl bg-white/10 p-5">
+              <div class="text-4xl font-black text-cyan-300">77%</div>
+              <p class="mt-2 text-sm text-slate-100">de líderes de servicio sienten presión para desplegar IA y modernizar soporte.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-slate-200 bg-white">
+      <div class="mx-auto max-w-7xl px-6 py-20">
+        <div class="text-sm font-semibold uppercase section-label text-orange-500">Marco de madurez de IA</div>
+        <h2 class="mt-3 text-4xl font-black md:text-5xl">Los niveles de orquestación de experiencia</h2>
+        <div class="mt-12 grid gap-4 md:grid-cols-6">
+          <div class="hover-rise rounded-[1.75rem] border border-blue-200 bg-blue-50 p-5 shadow-sm transition"><div class="text-sm font-semibold uppercase tracking-[0.25em] opacity-70">Level 0</div><div class="mt-3 text-xl font-bold leading-tight">Cero orquestación</div><p class="mt-4 text-sm leading-6 opacity-80">Solo humanos sin soporte de sistemas</p></div>
+          <div class="hover-rise rounded-[1.75rem] border border-blue-200 bg-blue-50 p-5 shadow-sm transition"><div class="text-sm font-semibold uppercase tracking-[0.25em] opacity-70">Level 1</div><div class="mt-3 text-xl font-bold leading-tight">Basado en menús</div><p class="mt-4 text-sm leading-6 opacity-80">Transcripción de voz limitada</p></div>
+          <div class="hover-rise rounded-[1.75rem] border border-orange-200 bg-orange-50 p-5 shadow-sm transition"><div class="text-sm font-semibold uppercase tracking-[0.25em] opacity-70">Level 2</div><div class="mt-3 text-xl font-bold leading-tight">Automatización predefinida</div><p class="mt-4 text-sm leading-6 opacity-80">Transaccional, omnicanal, rígido</p></div>
+          <div class="hover-rise rounded-[1.75rem] border border-orange-200 bg-orange-50 p-5 shadow-sm transition"><div class="text-sm font-semibold uppercase tracking-[0.25em] opacity-70">Level 3</div><div class="mt-3 text-xl font-bold leading-tight">Conversaciones generadas</div><p class="mt-4 text-sm leading-6 opacity-80">Prescriptiva, personal y eficiente</p></div>
+          <div class="hover-rise rounded-[1.75rem] border border-slate-200 bg-slate-900 p-5 text-white shadow-sm transition"><div class="text-sm font-semibold uppercase tracking-[0.25em] opacity-70">Level 4</div><div class="mt-3 text-xl font-bold leading-tight">Agentic Experience</div><p class="mt-4 text-sm leading-6 opacity-80">Semi-autónoma y consciente del contexto</p></div>
+          <div class="hover-rise rounded-[1.75rem] border border-slate-200 bg-slate-900 p-5 text-white shadow-sm transition"><div class="text-sm font-semibold uppercase tracking-[0.25em] opacity-70">Level 5</div><div class="mt-3 text-xl font-bold leading-tight">Orquestación agentica universal</div><p class="mt-4 text-sm leading-6 opacity-80">Autónoma, hiperpersonal y autoajustable</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solucion" class="mx-auto max-w-7xl px-6 py-20">
+      <div class="max-w-4xl">
+        <div class="text-sm font-semibold uppercase section-label text-orange-500">Introducción</div>
+        <h2 class="mt-3 text-4xl font-black md:text-5xl">CX Cloud: Genesys + Salesforce</h2>
+        <p class="mt-5 text-lg leading-8 text-slate-700">
+          Una integración nativa para voz, digital, routing inteligente, schema de datos común, agent copilot y gestión de fuerza laboral, lista para operar a escala empresarial.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-4 lg:grid-cols-[280px_1fr]">
+        <div class="topic-nav grid gap-3">
+          <button class="topic-btn active rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-semibold transition" data-topic="voz">Voz nativa y digital</button>
+          <button class="topic-btn rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-semibold transition" data-topic="datos">Esquema de datos común</button>
+          <button class="topic-btn rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-semibold transition" data-topic="routing">Enrutamiento inteligente</button>
+          <button class="topic-btn rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-semibold transition" data-topic="wem">Gestión de fuerza laboral</button>
+          <button class="topic-btn rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-semibold transition" data-topic="empresa">Listo para la empresa</button>
+        </div>
+
+        <div class="topic-content rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+          <div class="topic-panel active" data-panel="voz">
+            <div class="text-sm font-semibold uppercase section-label text-orange-500">01</div>
+            <h3 class="mt-3 text-3xl font-black">Voz nativa y digital</h3>
+            <p class="mt-4 text-lg leading-8 text-slate-700">Transfiera su operador u opte por Genesys Cloud Voice y canales digitales que aparecen de forma nativa en Salesforce, consolidando el trabajo del agente en una sola experiencia.</p>
+          </div>
+          <div class="topic-panel" data-panel="datos">
+            <div class="text-sm font-semibold uppercase section-label text-orange-500">02</div>
+            <h3 class="mt-3 text-3xl font-black">Esquema de datos común</h3>
+            <p class="mt-4 text-lg leading-8 text-slate-700">Reduzca la carga de TI con datos sincronizados y compatibles con IA entre plataformas. Se elimina el mapeo frágil de atributos y se habilita una base consistente para automatización y personalización.</p>
+          </div>
+          <div class="topic-panel" data-panel="routing">
+            <div class="text-sm font-semibold uppercase section-label text-orange-500">03</div>
+            <h3 class="mt-3 text-3xl font-black">Enrutamiento inteligente</h3>
+            <p class="mt-4 text-lg leading-8 text-slate-700">Genesys Cloud AI Predictive Routing asigna grandes volúmenes de interacciones a los agentes más adecuados, optimizando KPIs como AHT y FCR con datos históricos y en vivo.</p>
+          </div>
+          <div class="topic-panel" data-panel="wem">
+            <div class="text-sm font-semibold uppercase section-label text-orange-500">04</div>
+            <h3 class="mt-3 text-3xl font-black">Gestión de fuerza laboral</h3>
+            <p class="mt-4 text-lg leading-8 text-slate-700">Pronóstico, capacidad, programación, tiempo libre y adherencia se gestionan en un modelo unificado para agentes de Salesforce, mejorando productividad y experiencia del empleado.</p>
+          </div>
+          <div class="topic-panel" data-panel="empresa">
+            <div class="text-sm font-semibold uppercase section-label text-orange-500">05</div>
+            <h3 class="mt-3 text-3xl font-black">Listo para la empresa</h3>
+            <p class="mt-4 text-lg leading-8 text-slate-700">Operación global con alta disponibilidad, cobertura multinacional y escala de voz empresarial, diseñada para soportar organizaciones con alta demanda y estándares operativos rigurosos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pilares" class="bg-slate-950 text-white">
+      <div class="mx-auto max-w-7xl px-6 py-20">
+        <div class="max-w-4xl">
+          <div class="text-sm font-semibold uppercase section-label text-orange-400">Pilares de valor</div>
+          <h2 class="mt-3 text-4xl font-black md:text-5xl">De la automatización a la optimización continua</h2>
+        </div>
+        <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <article class="pillar-card rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-xl shadow-black/10 transition">
+            <div class="text-sm font-semibold uppercase tracking-[0.3em] text-orange-300">Automate</div>
+            <h3 class="mt-3 text-2xl font-bold leading-tight">Maximice el autoservicio del cliente 24/7</h3>
+            <div class="mt-5 space-y-3 text-sm leading-6 text-slate-200">
+              <div class="flex gap-3"><div class="mt-2 h-2 w-2 rounded-full bg-cyan-300"></div><p>Evolucione del autoservicio rígido a interacciones agenciales.</p></div>
+              <div class="flex gap-3"><div class="mt-2 h-2 w-2 rounded-full bg-cyan-300"></div><p>Cree y modifique agentes de IA sin escribir código.</p></div>
+              <div class="flex gap-3"><div class="mt-2 h-2 w-2 rounded-full bg-cyan-300"></div><p>Orqueste agentes de IA con estándares abiertos como MCP y A2A.</p></div>
+            </div>
+            <div class="mt-6 rounded-2xl bg-gradient-to-r from-orange-500 to-cyan-500 p-[1px]"><div class="rounded-2xl bg-slate-950 px-4 py-4 text-sm font-semibold text-white">50–70% aumento en autoservicio / 20–50% tasa de contención</div></div>
+          </article>
+          <article class="pillar-card rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-xl shadow-black/10 transition">
+            <div class="text-sm font-semibold uppercase tracking-[0.3em] text-orange-300">Augment</div>
+            <h3 class="mt-3 text-2xl font-bold leading-tight">Empodere a los empleados en el momento y en sus carreras</h3>
+            <div class="mt-5 space-y-3 text-sm leading-6 text-slate-200">
+              <div class="flex gap-3"><div class="mt-2 h-2 w-2 rounded-full bg-cyan-300"></div><p>Asistencia en tiempo real con contexto, resúmenes y mejores siguientes acciones.</p></div>
+              <div class="flex gap-3"><div class="mt-2 h-2 w-2 rounded-full bg-cyan-300"></div><p>Transforme conversaciones en hallazgos accionables para supervisión y coaching.</p></div>
+              <div class="flex gap-3"><div class="mt-2 h-2 w-2 rounded-full bg-cyan-300"></div><p>Integre cronograma, adherencia y desempeño en una sola vista.</p></div>
+            </div>
+            <div class="mt-6 rounded-2xl bg-gradient-to-r from-orange-500 to-cyan-500 p-[1px]"><div class="rounded-2xl bg-slate-950 px-4 py-4 text-sm font-semibold text-white">18% mejora en FCR / 38% reducción en costos administrativos</div></div>
+          </article>
+          <article class="pillar-card rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-xl shadow-black/10 transition">
+            <div class="text-sm font-semibold uppercase tracking-[0.3em] text-orange-300">Personalize</div>
+            <h3 class="mt-3 text-2xl font-bold leading-tight">Cree experiencias empáticas y fluidas</h3>
+            <div class="mt-5 space-y-3 text-sm leading-6 text-slate-200">
+              <div class="flex gap-3"><div class="mt-2 h-2 w-2 rounded-full bg-cyan-300"></div><p>Active campañas personalizadas con datos sincronizados y listos para IA.</p></div>
+              <div class="flex gap-3"><div class="mt-2 h-2 w-2 rounded-full bg-cyan-300"></div><p>Identifique prospectos de alto valor e interactúe proactivamente.</p></div>
+              <div class="flex gap-3"><div class="mt-2 h-2 w-2 rounded-full bg-cyan-300"></div><p>Monitoree y escale conversaciones sociales a agentes en Salesforce.</p></div>
+            </div>
+            <div class="mt-6 rounded-2xl bg-gradient-to-r from-orange-500 to-cyan-500 p-[1px]"><div class="rounded-2xl bg-slate-950 px-4 py-4 text-sm font-semibold text-white">68% mejora en conversaciones de ventas / 29% aumento en ingresos</div></div>
+          </article>
+          <article class="pillar-card rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-xl shadow-black/10 transition">
+            <div class="text-sm font-semibold uppercase tracking-[0.3em] text-orange-300">Optimize</div>
+            <h3 class="mt-3 text-2xl font-bold leading-tight">Analice y mejore continuamente CX y EX</h3>
+            <div class="mt-5 space-y-3 text-sm leading-6 text-slate-200">
+              <div class="flex gap-3"><div class="mt-2 h-2 w-2 rounded-full bg-cyan-300"></div><p>Use AI Predictive Routing para asignar cada interacción al mejor agente.</p></div>
+              <div class="flex gap-3"><div class="mt-2 h-2 w-2 rounded-full bg-cyan-300"></div><p>Visualice journeys completos para detectar fricción y oportunidades.</p></div>
+              <div class="flex gap-3"><div class="mt-2 h-2 w-2 rounded-full bg-cyan-300"></div><p>Vincule acciones e inversiones digitales con resultados de negocio.</p></div>
+            </div>
+            <div class="mt-6 rounded-2xl bg-gradient-to-r from-orange-500 to-cyan-500 p-[1px]"><div class="rounded-2xl bg-slate-950 px-4 py-4 text-sm font-semibold text-white">14% mejora en felicidad del empleado / hasta 15% menos AHT</div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="arquitectura" class="mx-auto max-w-7xl px-6 py-20">
+      <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div>
+          <div class="text-sm font-semibold uppercase section-label text-orange-500">Arquitectura conjunta</div>
+          <h2 class="mt-3 text-4xl font-black md:text-5xl">Una solución diseñada para moverse más allá de Open CTI</h2>
+          <div class="relative mt-8 pl-10">
+            <div class="timeline-line"></div>
+            <div class="space-y-5">
+              <div class="relative rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"><div class="absolute -left-9 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-[#101935] font-bold text-white">1</div><p class="text-slate-700">El cliente inicia por voz, digital, SMS, email o self-service.</p></div>
+              <div class="relative rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"><div class="absolute -left-9 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-[#101935] font-bold text-white">2</div><p class="text-slate-700">El canal se enruta al sistema host correspondiente.</p></div>
+              <div class="relative rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"><div class="absolute -left-9 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-[#101935] font-bold text-white">3</div><p class="text-slate-700">Bots de voz y digital resuelven el primer nivel antes de escalar a humanos.</p></div>
+              <div class="relative rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"><div class="absolute -left-9 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-[#101935] font-bold text-white">4</div><p class="text-slate-700">Genesys Flow Engine envía atributos relevantes al motor de routing.</p></div>
+              <div class="relative rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"><div class="absolute -left-9 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-[#101935] font-bold text-white">5</div><p class="text-slate-700">El Routing Engine determina el agente ideal y sincroniza con Omni.</p></div>
+              <div class="relative rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"><div class="absolute -left-9 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-[#101935] font-bold text-white">6</div><p class="text-slate-700">El agente atiende desde Salesforce Service Console con contexto unificado.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+          <div class="grid gap-5 md:grid-cols-3">
+            <div class="rounded-2xl bg-slate-50 p-5">
+              <div class="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">Canales</div>
+              <div class="mt-4 space-y-2 text-sm text-slate-700">
+                <div>1-800 / línea de negocio</div>
+                <div>Digital / SMS / ABC</div>
+                <div>Support@Brand</div>
+                <div>Online account</div>
+                <div>Webchat & self-service</div>
+              </div>
+            </div>
+            <div class="rounded-2xl bg-orange-50 p-5">
+              <div class="text-sm font-semibold uppercase tracking-[0.25em] text-orange-700">Genesys</div>
+              <div class="mt-4 space-y-2 text-sm text-slate-700">
+                <div>Event Data Platform</div>
+                <div>Flow Engine</div>
+                <div>Routing Engine</div>
+                <div>WEM, QM, Forecasting</div>
+                <div>Voice & Digital Bots</div>
+              </div>
+            </div>
+            <div class="rounded-2xl bg-cyan-50 p-5">
+              <div class="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-700">Salesforce</div>
+              <div class="mt-4 space-y-2 text-sm text-slate-700">
+                <div>Service Console</div>
+                <div>Case & Knowledge</div>
+                <div>Data Cloud</div>
+                <div>Omni Engine</div>
+                <div>Customer 360</div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8 rounded-[1.75rem] bg-slate-950 p-6 text-white">
+            <div class="text-lg font-bold">Mensajes arquitectónicos clave</div>
+            <div class="mt-4 grid gap-4 md:grid-cols-2">
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-slate-200">Single pane of glass omnicanal</div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-slate-200">Visibilidad en tiempo real con un solo routing engine</div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-slate-200">Gestión unificada de agentes y supervisores</div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-slate-200">Configuración no-code nativa a ambas plataformas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="impacto" class="border-y border-slate-200 bg-white">
+      <div class="mx-auto max-w-7xl px-6 py-20">
+        <div class="max-w-4xl">
+          <div class="text-sm font-semibold uppercase section-label text-orange-500">Impacto de negocio</div>
+          <h2 class="mt-3 text-4xl font-black md:text-5xl">Mejores experiencias. Mejores resultados.</h2>
+        </div>
+        <div class="mt-12 grid gap-6 lg:grid-cols-4">
+          <div class="metric-card rounded-[2rem] border border-slate-200 bg-slate-50 p-6 shadow-sm transition"><div class="text-5xl font-black text-orange-500">23%</div><div class="mt-4 text-2xl font-bold leading-tight">Productividad y retención de empleados</div><p class="mt-4 text-sm leading-6 text-slate-700">Reducción de errores de proceso mediante un escritorio unificado, IA y monitoreo de calidad.</p></div>
+          <div class="metric-card rounded-[2rem] border border-slate-200 bg-slate-50 p-6 shadow-sm transition"><div class="text-5xl font-black text-orange-500">20%</div><div class="mt-4 text-2xl font-bold leading-tight">Crecimiento reduciendo fricción</div><p class="mt-4 text-sm leading-6 text-slate-700">Disminución del tiempo promedio de resolución con autoservicio, personalización y contexto omnicanal.</p></div>
+          <div class="metric-card rounded-[2rem] border border-slate-200 bg-slate-50 p-6 shadow-sm transition"><div class="text-5xl font-black text-orange-500">12+</div><div class="mt-4 text-2xl font-bold leading-tight">Simplificación tecnológica</div><p class="mt-4 text-sm leading-6 text-slate-700">Sistemas dispares retirados al consolidar CCaaS, WEM y CRM en una oferta integrada.</p></div>
+          <div class="metric-card rounded-[2rem] border border-slate-200 bg-slate-50 p-6 shadow-sm transition"><div class="text-5xl font-black text-orange-500">65%</div><div class="mt-4 text-2xl font-bold leading-tight">Reasignación a iniciativas de alto impacto</div><p class="mt-4 text-sm leading-6 text-slate-700">Reducción potencial de costos de CX al combinar IA diseñada para CX/EX con operación unificada.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="mx-auto max-w-7xl px-6 py-20">
+      <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+        <div>
+          <div class="text-sm font-semibold uppercase section-label text-orange-500">Roadmap</div>
+          <h2 class="mt-3 text-4xl font-black md:text-5xl">Prioridades 2026 para CX Cloud</h2>
+          <p class="mt-5 text-lg leading-8 text-slate-700">
+            Evolución enfocada en voz, digital, operación en Salesforce, agentic service, sincronización en tiempo real y nuevas capacidades de interacción.
+          </p>
+          <div class="mt-8 rounded-[2rem] bg-gradient-to-br from-[#101935] to-[#1d4f91] p-6 text-white">
+            <div class="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300">Ejes</div>
+            <div class="mt-4 grid grid-cols-2 gap-4 text-sm">
+              <div class="rounded-2xl bg-white/10 p-4">Voice</div>
+              <div class="rounded-2xl bg-white/10 p-4">Digital</div>
+              <div class="rounded-2xl bg-white/10 p-4">MCP integration</div>
+              <div class="rounded-2xl bg-white/10 p-4">Agentforce support</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <div class="roadmap-item flex rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">Agentforce service agent support</div>
+          <div class="roadmap-item flex rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">Real-time attribute syncing</div>
+          <div class="roadmap-item flex rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">Create voice call records while in queue</div>
+          <div class="roadmap-item flex rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">Manage adherence notifications</div>
+          <div class="roadmap-item flex rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">Configurable after-call work behavior</div>
+          <div class="roadmap-item flex rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">Call forwarding</div>
+          <div class="roadmap-item flex rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">Advanced transfer and conference</div>
+          <div class="roadmap-item flex rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">MCP integration</div>
+          <div class="roadmap-item flex rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">Video chat</div>
+          <div class="roadmap-item flex rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">Mobile user calling</div>
+          <div class="roadmap-item flex rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">Supervisor audio monitoring</div>
+          <div class="roadmap-item flex rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">ACD voicemail</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-950 text-white">
+      <div class="mx-auto max-w-7xl px-6 py-20">
+        <div class="grid gap-10 lg:grid-cols-[1fr_0.9fr]">
+          <div>
+            <div class="text-sm font-semibold uppercase section-label text-orange-400">Cierre</div>
+            <h2 class="mt-3 text-4xl font-black md:text-5xl">IA diseñada, entrenada y optimizada específicamente para CX y EX</h2>
+            <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+              El valor no está solo en sumar canales o copilots. Está en combinar automatización, augmentación, personalización y optimización sobre una arquitectura unificada capaz de conectar journeys, agentes, datos y decisiones en tiempo real.
+            </p>
+          </div>
+          <div class="rounded-[2rem] border border-white/10 bg-white/5 p-8">
+            <div class="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300">Takeaways</div>
+            <div class="mt-6 space-y-4 text-slate-200">
+              <div class="rounded-2xl bg-white/5 p-4">Unifica CCaaS, CRM y WEM de forma nativa.</div>
+              <div class="rounded-2xl bg-white/5 p-4">Reduce fricción operativa y dependencia de integraciones frágiles.</div>
+              <div class="rounded-2xl bg-white/5 p-4">Prepara la base para agentic AI y trabajo digital.</div>
+              <div class="rounded-2xl bg-white/5 p-4">Convierte eficiencia operativa en crecimiento y lealtad.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white">
+    <div class="max-w-7xl mx-auto px-6 py-8 text-sm text-slate-600">
+    
+      <p class="font-semibold text-slate-800 mb-2">
+        © 2026 Genesys. Todos los derechos reservados.
+      </p>
+    
+      <p class="leading-relaxed">
+        Este sitio web y su contenido son propiedad exclusiva de Genesys México y han sido desarrollados únicamente con fines informativos. 
+        Queda estrictamente prohibida su reproducción, distribución, modificación o compartición total o parcial sin autorización previa por escrito.
+      </p>
+
+      <p class="mt-2 text-xs text-slate-500">
+        La información presentada no constituye una oferta comercial vinculante y puede estar sujeta a cambios sin previo aviso.
+      </p>
+
+    </div>
+  </footer>
+
+  <script>
+    const topicButtons = document.querySelectorAll('.topic-btn');
+    const topicPanels = document.querySelectorAll('.topic-panel');
+
+    topicButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const topic = button.dataset.topic;
+
+        topicButtons.forEach((btn) => btn.classList.remove('active'));
+        topicPanels.forEach((panel) => panel.classList.remove('active'));
+
+        button.classList.add('active');
+        document.querySelector(`[data-panel="${topic}"]`).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7f9;
+    margin: 0;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tree-container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* El bloque de cada paso */
+.step-node {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    width: 90%;
+    margin-bottom: 40px;
+    position: relative;
+    text-align: center;
+    animation: slideIn 0.5s ease-out;
+}
+
+/* La Raíz (Línea conectora) */
+.step-node:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    width: 2px;
+    height: 40px;
+    background: #ff4f1f; /* Color naranja Genesys */
+}
+
+h2 { color: #002d5b; font-size: 1.2rem; margin-bottom: 20px; }
+
+h1 { color: #ffffff; font-size: 3rem; margin-bottom: 20px; }
+
+.btn-group { display: flex; justify-content: center; gap: 15px; }
+
+button {
+    padding: 12px 30px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+button:hover {
+    border-color: #ff4f1f;
+    color: #ff4f1f;
+}
+
+button.selected {
+    background: #ff4f1f;
+    color: white;
+    border-color: #ff4f1f;
+}
+
+/* Modal de Notificación */
+#modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 45, 91, 0.8); /* Azul oscuro con transparencia */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.hidden { display: none !important; }
+
+#result-modal {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    animation: popUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.badge { color: #ff4f1f; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; }
+
+@keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes popUp { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* Contenedor del Video */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Lo envía al fondo */
+    overflow: hidden;
+}
+
+#bg-video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* Capa oscura para que el texto sea legible */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 15, 30, 0.7); /* Azul muy oscuro semitransparente */
+}
+
+/* Ajuste en los nodos para que resalten sobre el video */
+.step-node {
+    background: rgba(255, 255, 255, 0.95); /* Blanco ligeramente transparente */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque detrás del nodo */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Modificamos el cuerpo para que el fondo sea el video */
+body {
+    background-color: transparent; 
+}
